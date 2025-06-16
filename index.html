@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>47 Motivos</title>
+  <link rel="stylesheet" href="malu.css">
+  <style>
+  </style>
+</head>
+<footer id="rodape">from: rafael goes<br>to: the prettiest girl alive</footer>
+<body>
+  <div id="inicio">
+    <h1 style="color: #000; text-shadow: 1px 1px 2px pink;">47 Motivos para você namorar comigo</h1>
+    <button class="btn" onclick="comecar()" id="btnSim">Começar</button>
+    <button class="btn" id="btnNao">Não quero</button>
+  </div>
+
+  <div id="slide">
+    <div class="card">
+      <img id="img" src="img/1.jpg" alt="Motivo 1">
+      <div class="descricao">
+        <h3 id="titulo">1. Placeholder</h3>
+        <p id="descricao">Texto do motivo 1.</p>
+      </div>
+    </div>
+    <div class="navegacao">
+      <button class="btn" onclick="voltar()">Anterior</button>
+      <button class="btn" onclick="proximo()">Próximo</button>
+    </div>
+  </div>
+<div id="musicControl" style="position:fixed; bottom:20px; right:10px; align-items:center;background:#ff3f3f; border-radius:8px; padding:10px; width:40px; overflow:hidden; transition: width 0.3s ease; display: none;">
+  <button id="btnMusica" style="left: 20px; background:none; border:none; color:white; font-size:20px; display:flex; align-items:center; justify-content:center;">♪</button>
+  <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="0.5" style="margin-left:10px; width:100px; -webkit-appearance:none; height:6px; background:#ffd6d0; border-radius:5px; outline:none; opacity:0; transition: opacity 0.3s ease;">
+</div>
+  <audio id="musica" loop>
+  <source src="music/la-vie-en-rose.mp3.mp3" type="audio/mpeg">
+</audio>
+
+  <script src="motivos.js"></script>
+  <script>
+    let atual = 0;
+    const musicControl = document.getElementById('musicControl');
+
+    function comecar() {
+      document.getElementById('inicio').style.display = 'none';
+      document.getElementById('slide').style.display = 'flex';
+      mostrarMotivo();
+      document.getElementById('musica').play();
+      document.getElementById('musicControl').style.display = 'flex';
+    }
+
+    function mostrarMotivo() {
+      document.getElementById('img').src = motivos[atual].img;
+      document.getElementById('titulo').textContent = motivos[atual].titulo;
+      document.getElementById('descricao').textContent = motivos[atual].descricao;
+      
+
+      const btnProximo = document.querySelector('.navegacao button:last-child');
+      btnProximo.style.display = (atual === motivos.length - 1) ? 'none' : 'inline-block';
+  
+      const btnAnterior = document.querySelector('.navegacao button:first-child');
+      btnAnterior.style.display = (atual === 0) ? 'none' : 'inline-block';
+
+      if (atual === motivos.length - 1) soltarCoracoes();
+}
+
+
+    function proximo() {
+      if (atual < motivos.length - 1) {
+        atual++;
+        mostrarMotivo();
+      }
+    }
+
+    function voltar() {
+      if (atual > 0) {
+        atual--;
+        mostrarMotivo();
+      }
+    }
+
+    const btnNao = document.getElementById('btnNao');
+    btnNao.addEventListener('mouseover', (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      const offset = 100;
+      let newTop, newLeft;
+
+      do {
+        newTop = Math.random() * 80;
+        newLeft = Math.random() * 80;
+      } while (Math.abs(window.innerHeight * newTop / 100 - mouseY) < offset &&
+               Math.abs(window.innerWidth * newLeft / 100 - mouseX) < offset);
+
+      btnNao.style.top = newTop + '%';
+      btnNao.style.left = newLeft + '%';
+    });
+    document.addEventListener('keydown', (e) => {
+  if (document.getElementById('slide').style.display === 'flex') {
+    if (e.key === 'ArrowRight') proximo();
+    if (e.key === 'ArrowLeft') voltar();
+  }
+});
+
+function soltarCoracoes() {
+  for (let i = 0; i < 30; i++) {
+    setTimeout(() => {
+      const coracao = document.createElement('div');
+      coracao.className = 'coracao';
+      coracao.textContent = '❤️';
+      coracao.style.left = Math.random() * 100 + 'vw';
+      coracao.style.fontSize = (16 + Math.random() * 24) + 'px';
+      document.body.appendChild(coracao);
+      setTimeout(() => coracao.remove(), 4000);
+    }, i * 150);
+  }
+}
+function toggleMusica() {
+  const musica = document.getElementById('musica');
+  musica.paused ? musica.play() : musica.pause();
+}
+const musica = document.getElementById('musica');
+  const btnMusica = document.getElementById('btnMusica');
+  const volumeSlider = document.getElementById('volumeSlider');
+
+
+  volumeSlider.oninput = () => {
+    musica.volume = volumeSlider.value;
+  };
+
+  musicControl.addEventListener('mouseenter', () => {
+    volumeSlider.style.opacity = '1';
+    musicControl.style.width = '160px';
+  });
+  musicControl.addEventListener('mouseleave', () => {
+    volumeSlider.style.opacity = '0';
+    musicControl.style.width = '40px';
+  });
+  </script>
+</body>
+</html>
