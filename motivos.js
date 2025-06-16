@@ -18,7 +18,7 @@ const motivos = [
   { img: 'img/17.jpg', titulo: '17. Deixo você fazer o que quiser com meu corpo', descricao: 'as veiz machuca' },
   { img: 'img/18.jpg', titulo: '18. Amo seus beijos', descricao: 'bom demais me sinto no céu' },
   { img: 'img/19.jpg', titulo: '19. O Que É Seu Ninguém Te Tira', descricao: 'e eu sou 100% seu. tenho certeza disso' },
-  { img: 'img/20.jpg', titulo: '20. Eu amo sua família', descricao: 'e adoro ficar na sua casa'},
+  { img: 'img/20.jpg', titulo: '20. Eu amo sua família', descricao: 'e a dorinha me ama'},
   { img: 'img/21.jpg', titulo: '21. Sou seu amigo', descricao: 'nóis é mema fita²' },
   { img: 'img/22.jpg', titulo: '22. Você é minha inspiração', descricao: 'Muita coisa! é o principal motivo pelo qual quero ser uma pessoa cada vez melhor' },
   { img: 'img/23.jpg', titulo: '23. Aprecio sua autenticidade', descricao: 'Vejo arte em tudo que você faz' },
