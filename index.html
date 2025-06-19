@@ -94,7 +94,9 @@
   coracao.style.fontSize = (16 + Math.random() * 20) + 'px';
   coracao.style.opacity = '0.8';
   coracao.style.transition = 'bottom 4s linear, opacity 4s';
-  coracao.style.zIndex = '5';
+  coracao.style.zIndex = '0';
+  coracao.style.userSelect = 'none';
+  coracao.style.pointerEvents = 'none';
   document.body.appendChild(coracao);
 
   requestAnimationFrame(() => {
@@ -111,7 +113,7 @@
       mostrarMotivo();
       document.getElementById('musica').play();
       document.getElementById('musicControl').style.display = 'flex';
-      setInterval(subirCoracao, 6000);
+      setInterval(subirCoracao, 10000);
     }
 
     function mostrarMotivo() {
@@ -131,11 +133,6 @@
 
       if (atual === motivos.length - 1) soltarCoracoes();
       atualizarContador();
-       /* if (atual === motivos.length - 1) {
-    document.getElementById('extraStats').style.display = 'block';
-  } else {
-    document.getElementById('extraStats').style.display = 'none';
-  } */
 }
 
 
