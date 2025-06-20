@@ -7,7 +7,8 @@ body, html {
   width: 100%;
   height: 100%;
   font-family: 'Segoe UI', 'Arial', sans-serif;
-  background: linear-gradient(0deg, #e9e9e9, #ffcccc);
+  background: linear-gradient(0deg, #222, #111);
+  color: #eee;
   position: relative;
   overflow: hidden;
 }
@@ -26,7 +27,7 @@ body, html {
   padding: 15px 30px;
   font-size: 18px;
   border: none;
-  border-radius: 12px;
+  border-radius: 5px;
   background: #ff3f3f;
   color: white;
   cursor: pointer;
@@ -51,9 +52,9 @@ body, html {
 #btnNao {
   padding: 15px;
   min-width: 150px;
+  box-shadow: none;
   background-color: transparent;
-  border: 2px solid #fa2424;
-  color: #fa2424;
+  color: white;
   margin-right: 200px;
   margin-top: 50px;
   position: absolute;
@@ -87,12 +88,12 @@ body, html {
 }
 .descricao h3 {
   font-size: 20px;
-  color: #fa4c4c;
+  color: #d14f4f;
   margin-bottom: 2px;
 }
 .descricao p {
   font-size: 14px;
-  color: #555;
+  color: #303030;
 }
 .navegacao {
   margin-top: 20px;
@@ -103,7 +104,7 @@ body, html {
   width: 100%;
   text-align: center;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.3);
   pointer-events: none;
   font-style: italic;
 }
@@ -117,12 +118,12 @@ body::before {
   height: 80px;
   background: url('img/coracao.png') no-repeat center center;
   background-size: contain;
-  opacity: 0.1;
+  opacity: 0.07;
   pointer-events: none;
 }
 
 .btn:disabled {
-  opacity: 0;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
@@ -130,7 +131,7 @@ body::before {
   position: fixed;
   bottom: 0;
   font-size: 24px;
-  color: red;
+  color: #d14f4f;
   animation: subir 4s ease-out forwards;
   pointer-events: none;
   z-index: 999;
@@ -146,6 +147,7 @@ body::before {
     opacity: 0;
   }
 }
+
 #musicControl:hover {
   width: 160px;
 }
@@ -157,17 +159,16 @@ body::before {
   appearance: none;
   width: 14px;
   height: 14px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  box-shadow: 0 0 4px rgba(179,57,57,0.7);
 }
 #volumeSlider::-moz-range-thumb {
   width: 14px;
   height: 14px;
-  background: #ff6f61;
+  background: #b33939;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  box-shadow: 0 0 4px rgba(179,57,57,0.7);
 }
-
