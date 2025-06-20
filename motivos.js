@@ -30,7 +30,7 @@ const motivos = [
   { img: 'img/29.jpg', titulo: '29. Quero ouvir sua voz sempre', descricao: 'e quero que você se sinta ouvida' },
   { img: 'img/30.jpg', titulo: '30. Respeito seu espaço', descricao: 'nem sempre, desculpa' },
   { img: 'img/31.jpg', titulo: '31. Sou fiel aos nossos momentos', descricao: 'eles vivem sem pagar aluguel na minha cabeça' },
-  { img: 'img/32.jpg', titulo: '32. Quero descobrir o mundo contigo', descricao: 'desfilar pelo planeta com você é meu maior sonho' },
+  { img: 'img/32.jpg', titulo: '32. Quero viajar o mundo contigo', descricao: 'desfilar pelo planeta com você é meu maior sonho' },
   { img: 'img/33.jpg', titulo: '33. Falo sobre você com Deus', descricao: 'e não é pouco. Peço pra Ele te guardar e te ajudar conquistar todos seus objetivos.' },
   { img: 'img/34.jpg', titulo: '34. Me dou bem com sua mãe', descricao: 'na medida do possível' },
   { img: 'img/35.jpg', titulo: '35. Assumo meus erros', descricao: 'e nunca vou cansar de me desculpar por eles, pois você é o meu maior acerto' },
