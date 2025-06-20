@@ -97,6 +97,9 @@ function soltarCoracoes() {
       coracao.className = 'coracao';
       coracao.textContent = '❤️';
       coracao.style.left = Math.random() * 100 + 'vw';
+      coracao.style.zIndex = '0';
+      coracao.style.userSelect = 'none';
+      coracao.style.pointerEvents = 'none';
       coracao.style.fontSize = (16 + Math.random() * 24) + 'px';
       document.body.appendChild(coracao);
       setTimeout(() => coracao.remove(), 4000);

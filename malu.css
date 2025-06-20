@@ -67,6 +67,7 @@ body, html {
       width: 330px;
       height: 430px;
       display: flex;
+      z-index: 1;
       flex-direction: column;
       align-items: center;
       padding-bottom: 10px;
@@ -146,7 +147,7 @@ body::before {
   }
 }
 #musicControl:hover {
-  width: 160px; /* expande */
+  width: 160px;
 }
 #musicControl:hover #volumeSlider {
   opacity: 1;
