@@ -140,12 +140,7 @@ window.onload = () => {
     particles: {
       number: { value: 47 },
       color: { value: "#ff6f61" },
-      shape: { type: ["circle", "triangle", "image"],
-          image: {
-    src: "./img/heart-icon.png",
-    width: 50,
-    height: 50
-  }
+      shape: { type: ["circle", "triangle"  ]
        },
       opacity: { value: 0.5 },
       size: { value: 3 },
