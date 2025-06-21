@@ -49,6 +49,17 @@
 
       if (atual === motivos.length - 1) soltarCoracoes();
       atualizarContador();
+      const fita = document.getElementById('fitaAdesiva');
+const classes = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
+fita.className = 'fita'; 
+
+if (Math.random() < 0.5) { 
+  const aleatoria = classes[Math.floor(Math.random() * classes.length)];
+  fita.classList.add(aleatoria);
+  fita.style.display = 'block';
+} else {
+  fita.style.display = 'none';
+}
 }
 
 
