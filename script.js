@@ -130,12 +130,12 @@ const musica = document.getElementById('musica');
 
   function atualizarContador() {
   const inicio = new Date(2023, 1, 3);
-  const last = new Date(2025, 5, 14)
+  const last = new Date(2025, 5, 20)
   const hoje = new Date();
   const lastDate = Math.floor((hoje - last) / (1000 * 60 * 60 * 24));
   const dias = Math.floor((hoje - inicio) / (1000 * 60 * 60 * 24));
   document.getElementById('contadorDias').textContent = `${dias} dias desde o nosso primeiro encontro,`;
-  document.getElementById('contadorMotivos').textContent = `${motivos.length} motivos listados até então,`;
+  document.getElementById('contadorMotivos').textContent = `${motivos.length} motivos listados até então.`;
   if (lastDate > 1){
     document.getElementById('lastDate').textContent = `${lastDate} dias desde o nosso último encontro :/`;
 }
