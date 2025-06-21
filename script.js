@@ -130,7 +130,7 @@ const musica = document.getElementById('musica');
 
   function atualizarContador() {
   const inicio = new Date(2023, 1, 3);
-  const last = new Date(2025, 5, 20)
+  const last = new Date(2025, 5, 14)
   const hoje = new Date();
   const lastDate = Math.floor((hoje - last) / (1000 * 60 * 60 * 24));
   const dias = Math.floor((hoje - inicio) / (1000 * 60 * 60 * 24));
