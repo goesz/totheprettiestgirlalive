@@ -1,4 +1,5 @@
    let atual = 0;
+   let modo = 'principais';
     const musicControl = document.getElementById('musicControl');
 
     function subirCoracao() {
@@ -22,6 +23,17 @@
 
   setTimeout(() => coracao.remove(), 4000);
 }
+function digitarTexto(elemento, texto, delay = 30) {
+  elemento.textContent = '';
+  elemento.style.opacity = '0';
+setTimeout(() => elemento.style.opacity = '1', 100);
+  let i = 0;
+  const intervalo = setInterval(() => {
+    elemento.textContent += texto.charAt(i);
+    i++;
+    if (i === texto.length) clearInterval(intervalo);
+  }, delay);
+}
 
     function comecar() {
       document.getElementById('inicio').style.display = 'none';
@@ -33,21 +45,48 @@
     }
 
     function mostrarMotivo() {
-      document.getElementById('img').src = motivos[atual].img;
-      document.getElementById('titulo').textContent = motivos[atual].titulo;
-      document.getElementById('descricao').textContent = motivos[atual].descricao;
+      const lista = (modo === 'principais') ? motivos : motivosExtras;
+      const motivo = lista[atual];
+      document.getElementById('img').src = motivo.img;
+const titulo = document.getElementById('titulo');
+if (modo === 'extras') {
+  digitarTexto(titulo, motivo.titulo);
+} else {
+  titulo.textContent = motivo.titulo;
+  titulo.style.opacity = '1';
+}
+      document.getElementById('descricao').textContent = motivo.descricao;
       
+      document.getElementById('estrelaExtras').style.display = (modo === 'extras') ? 'block' : 'none';
 
-      const btnProximo = document.getElementById('btnProximo');
-      btnProximo.style.display = (atual === motivos.length - 1) ? 'none' : 'inline-block';
+    const btnProximo = document.getElementById('btnProximo');
+    if (modo === 'principais' && atual === motivos.length - 1) {
+    btnProximo.style.display = 'none';
+    } else if (modo === 'extras' && atual === motivosExtras.length - 1) {
+    btnProximo.style.display = 'none';
+    } else {
+    btnProximo.style.display = 'inline-block';
+    }
 
-      const btnEstatisticas = document.getElementById('btnStats');
-      btnEstatisticas.style.display = (atual === motivos.length - 1) ? 'inline-block' : 'none';
+    const btnEstatisticas = document.getElementById('btnStats');
+    if (modo === 'principais' && atual === motivos.length - 1) {
+    btnEstatisticas.style.display = 'inline-block';
+      } else if (modo === 'extras' && atual === motivosExtras.length - 1) {
+    btnEstatisticas.style.display = 'inline-block';
+    } else {
+    btnEstatisticas.style.display = 'none';
+    }
   
       const btnAnterior = document.getElementById('btnAnterior');
       btnAnterior.style.display = (atual === 0) ? 'none' : 'inline-block';
+      
+      const btnPrincipais = document.getElementById('btnPrincipais');
+      btnPrincipais.style.display = (atual === (motivosExtras.length - 1) && modo === 'extras') ? 'inline-block' : 'none';
 
-      if (atual === motivos.length - 1) soltarCoracoes();
+      document.getElementById('btnExtras').style.display =
+      (modo === 'principais' && atual === motivos.length - 1) ? 'inline-block' : 'none';
+
+      if (atual === motivos.length - 1 && modo === 'principais') soltarCoracoes();
       atualizarContador();
       const fita = document.getElementById('fitaAdesiva');
 const classes = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
@@ -62,21 +101,32 @@ if (Math.random() < 0.5) {
 }
 }
 
+function iniciarExtras() {
+  modo = 'extras';
+  atual = 0;
+  mostrarMotivo();
+}
 
+function voltarPrincipais() {
+  modo = 'principais';
+  atual = 0;
+  mostrarMotivo();
+}
 
-    function proximo() {
-      if (atual < motivos.length - 1) {
-        atual++;
-        mostrarMotivo();
-      }
-    }
+function proximo() {
+  const lista = (modo === 'principais') ? motivos : motivosExtras;
+  if (atual < lista.length - 1) {
+    atual++;
+    mostrarMotivo();
+  }
+}
 
-    function voltar() {
-      if (atual > 0) {
-        atual--;
-        mostrarMotivo();
-      }
-    }
+function voltar() {
+  if (atual > 0) {
+    atual--;
+    mostrarMotivo();
+  }
+}
 
     const btnNao = document.getElementById('btnNao');
     btnNao.addEventListener('mouseover', (e) => {

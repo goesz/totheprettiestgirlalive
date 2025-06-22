@@ -37,6 +37,8 @@ body, html {
 }
 #titulo {
   font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .btn:hover {
@@ -180,7 +182,7 @@ body::before {
   height: 60px;
   background: url('img/fita.png') no-repeat center;
   background-size: contain;
-  z-index: 20;
+  z-index: 10;
   pointer-events: none;
   display: none;
 }

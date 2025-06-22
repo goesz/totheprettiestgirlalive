@@ -68,6 +68,8 @@
 
   <div id="slide" style=>
     <div class="card">
+      <div id="estrelaExtras" style="position: absolute; display:none; position:absolute; top:-10px; right:-10px; font-size:60px; z-index: 20; user-select: none;   top: -50px;
+  right: -50px;">⭐</div>
       <div class="fita" id="fitaAdesiva"></div>
       <img id="img" src="img/1.jpg" alt="Motivo 1">
       <div class="descricao">
@@ -80,6 +82,8 @@
       <button class="btn" id="btnAnterior" onclick="voltar()"><</button>
       <button class="btn" id="btnProximo" onclick="proximo()">></button>
       <button class="btn" id="btnStats" onclick="mostrarEstatisticas()" style="background-color: white; box-shadow:none; color: #fa2424; transition: top 0.2s, left 0.2s; display: none;">Estatisticas</button>
+      <button class="btn" id="btnExtras" onclick="iniciarExtras()" style="display:none;">Extras</button>
+      <button class="btn" id="btnPrincipais" onclick="voltarPrincipais()" style="display:none;">47 motivos</button>
     </div>
   </div>
 <div id="musicControl" style="position:fixed; bottom:20px; right:10px; align-items:center;background:#ff3f3f; border-radius:8px; padding:10px; width:40px; overflow:hidden; transition: width 0.3s ease; display: none;">
@@ -91,6 +95,7 @@
 </audio>
 
   <script src="motivos.js"></script>
+  <script src="extras.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
