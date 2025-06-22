@@ -96,7 +96,7 @@ if (modo === 'extras') {
 const classes = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
 fita.className = 'fita'; 
 
-if (Math.random() < 0.5) { 
+if (Math.random() < 0.3) { 
   const aleatoria = classes[Math.floor(Math.random() * classes.length)];
   fita.classList.add(aleatoria);
   fita.style.display = 'block';
