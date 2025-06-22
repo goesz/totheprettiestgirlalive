@@ -4,7 +4,7 @@ const musicControl = document.getElementById("musicControl");
 
 function subirCoracao() {
   const coracao = document.createElement("div");
-  coracao.textContent = "💖";
+  coracao.textContent = "🤍";
   coracao.style.position = "fixed";
   coracao.style.left = Math.random() * 100 + "vw";
   coracao.style.bottom = "0";
