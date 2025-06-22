@@ -55,6 +55,10 @@ if (modo === 'extras') {
   titulo.textContent = motivo.titulo;
   titulo.style.opacity = '1';
 }
+
+      if(modo === 'extras'){
+        document.getElementById('adicionadoEm').innerHTML = `<i><b>Adicionado em: </b>${motivo.adicionado}</i>`;
+      }
       document.getElementById('descricao').textContent = motivo.descricao;
       
       document.getElementById('estrelaExtras').style.display = (modo === 'extras') ? 'block' : 'none';
@@ -70,7 +74,7 @@ if (modo === 'extras') {
 
     const btnEstatisticas = document.getElementById('btnStats');
     if (modo === 'principais' && atual === motivos.length - 1) {
-    btnEstatisticas.style.display = 'inline-block';
+    btnEstatisticas.style.display = 'none';
       } else if (modo === 'extras' && atual === motivosExtras.length - 1) {
     btnEstatisticas.style.display = 'inline-block';
     } else {
@@ -109,7 +113,8 @@ function iniciarExtras() {
 
 function voltarPrincipais() {
   modo = 'principais';
-  atual = 0;
+  atual = motivos.length - 1;
+  document.getElementById('adicionadoEm').innerHTML = ``;
   mostrarMotivo();
 }
 
@@ -196,7 +201,7 @@ const musica = document.getElementById('musica');
   const lastDate = Math.floor((hoje - last) / (1000 * 60 * 60 * 24));
   const dias = Math.floor((hoje - inicio) / (1000 * 60 * 60 * 24));
   document.getElementById('contadorDias').textContent = `${dias} dias desde o nosso primeiro encontro,`;
-  document.getElementById('contadorMotivos').textContent = `${motivos.length} motivos listados até então.`;
+  document.getElementById('contadorMotivos').textContent = `${motivos.length + motivosExtras.length} motivos listados até então.`;
   if (lastDate > 1){
     document.getElementById('lastDate').textContent = `${lastDate} dias desde o nosso último encontro :/`;
 }
