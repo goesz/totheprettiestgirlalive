@@ -23,7 +23,7 @@ function subirCoracao() {
 
   setTimeout(() => coracao.remove(), 4000);
 }
-function digitarTexto(elemento, texto, delay = 30) {
+function digitarTexto(elemento, texto, delay = 60) {
   elemento.textContent = "";
   elemento.style.opacity = "0";
   setTimeout(() => (elemento.style.opacity = "1"), 100);
@@ -57,9 +57,7 @@ function mostrarMotivo() {
   }
 
   if (modo === "extras") {
-    document.getElementById(
-      "adicionadoEm"
-    ).innerHTML = `<i><b>Adicionado em: </b>${motivo.adicionado}</i>`;
+    document.getElementById("adicionadoEm").innerHTML = `<i><b>Adicionado em: </b>${motivo.adicionado}</i>`;
   }
   document.getElementById("descricao").textContent = motivo.descricao;
 
