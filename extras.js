@@ -9,5 +9,6 @@ const motivosExtras = [
     img: 'extras/2.jpg',
     titulo: '2. ',
     descricao: ''
+    adicionado: '01/01/2001'
   }, */
 ];

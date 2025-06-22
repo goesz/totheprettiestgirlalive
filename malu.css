@@ -186,6 +186,19 @@ body::before {
   pointer-events: none;
   display: none;
 }
+
+.estrela{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: url('img/star.png') no-repeat center;
+  background-size: contain;
+  z-index: 20;
+  pointer-events: none;
+  display: none;
+  top: -40px;
+  left: -38px;
+}
 .fita.top-right {
   top: -25px;
   right: -25px;
