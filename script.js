@@ -109,8 +109,7 @@ function mostrarMotivo() {
     fita.classList.add(aleatoria);
     fita.style.display = "block";
   } else if(modo === 'extras') {
-const aleatoria = classes[Math.floor(Math.random() * (classes.length - 1)) + 1];
-    console.log(aleatoria)
+    const aleatoria = classes[Math.floor(Math.random() * (classes.length - 1)) + 1];
     fita.classList.add(aleatoria);
     fita.style.display = "block";
   }  else {
