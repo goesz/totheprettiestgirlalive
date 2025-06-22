@@ -41,7 +41,7 @@ function comecar() {
   mostrarMotivo();
   document.getElementById("musica").play();
   document.getElementById("musicControl").style.display = "flex";
-  setInterval(subirCoracao, 10000);
+  setInterval(subirCoracao, 15000);
 }
 
 function mostrarMotivo() {
