@@ -68,8 +68,8 @@ body, html {
       background: white;
       border: 8px solid white;
       box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-      width: 330px;
-      height: 430px;
+      width: 350px;
+      height: 450px;
       display: flex;
       z-index: 1;
       flex-direction: column;
