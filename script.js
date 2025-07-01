@@ -23,15 +23,19 @@ function subirCoracao() {
 
   setTimeout(() => coracao.remove(), 4000);
 }
+let intervaloDigitando; 
+
 function digitarTexto(elemento, texto, delay = 60) {
+  clearInterval(intervaloDigitando); 
   elemento.textContent = "";
   elemento.style.opacity = "0";
   setTimeout(() => (elemento.style.opacity = "1"), 100);
+  const letras = Array.from(texto);
   let i = 0;
-  const intervalo = setInterval(() => {
-    elemento.textContent += texto.charAt(i);
+  intervaloDigitando = setInterval(() => {
+    elemento.textContent += letras[i];
     i++;
-    if (i === texto.length) clearInterval(intervalo);
+    if (i === letras.length) clearInterval(intervaloDigitando);
   }, delay);
 }
 
